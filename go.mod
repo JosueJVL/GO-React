@@ -1,5 +1,5 @@
-module github.com/JosueJVL/go-react-tw
+module github.com/JosueJVL/GO-React
 
-go 1.12
+go 12.21.0
 
 require()
