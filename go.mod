@@ -1,4 +1,4 @@
-module github.com/JosueJVL/GO-React
+module github.com/JosueJVL/go-react-tw
 
 go 1.13
 
