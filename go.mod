@@ -1,7 +1,3 @@
-module github.com/JosueJVL/GO-React
+module yt2
 
 go 1.12
-
-require(
-
-)
