@@ -1,3 +1,3 @@
-module yt2
+module github.com/JosueJVL/GO-React
 
-go 1.12
+go 1.16
