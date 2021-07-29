@@ -5,12 +5,16 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/JosueJVL/GO-React/middlew"
+	"github.com/JosueJVL/GO-React/routers"
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
 )
 
 func Manejadores() {
 	route := mux.NewRouter()
+
+	route.HandleFunc("/registro", middlew.CheckDB(routers.Register)).Methods("POST")
 
 	// Abrir el Puerto
 	PORT := os.Getenv("PORT")
