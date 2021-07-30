@@ -19,7 +19,7 @@ func Manejadores() {
 	// Abrir el Puerto
 	PORT := os.Getenv("PORT")
 
-	if PORT != "" {
+	if PORT == "" {
 		PORT = "8080"
 	}
 

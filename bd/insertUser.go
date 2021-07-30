@@ -2,10 +2,10 @@ package bd
 
 import (
 	"context"
+	"log"
 	"time"
 
 	"github.com/JosueJVL/GO-React/models"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 func InsertUser(model models.User) (string, bool, error) {
@@ -19,11 +19,12 @@ func InsertUser(model models.User) (string, bool, error) {
 	model.Password, _ = Encrypt(model.Password)
 
 	result, err := col.InsertOne(context, model)
+
 	if result != nil {
+		log.Println("ERROR")
 		return "", false, err
 	}
 
-	ObjId, _ := result.InsertedID.(primitive.ObjectID)
-
-	return ObjId.String(), true, nil
+	log.Println("INSERT CORRECTO")
+	return "", true, nil
 }
