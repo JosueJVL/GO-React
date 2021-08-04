@@ -19,6 +19,7 @@ func ValidateUser(email string) (models.User, bool, string) {
 	db := MongoConection.Database("twitter")
 	col := db.Collection("users")
 
+	// M -- regresa un formato json mapeado
 	condition := bson.M{"email": email}
 
 	var result models.User
