@@ -10,7 +10,7 @@ import (
 
 func GenerateJWT(model models.User) (string, error) {
 
-	mykey := []byte("MastersdelDesarrollo_grupodeFacebook")
+	mykey := []byte("MastersdelDesarrollo_GO")
 
 	payload := jwt.MapClaims{
 		"email":     model.Email,

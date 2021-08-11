@@ -29,7 +29,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 
 	_, validateUser, _ := bd.ValidateUser(model.Email)
 	if validateUser {
-		http.Error(w, "Ya existe un usuario registrado con ese email", 400)
+		http.Error(w, "Ya existe un usuario registrado con ese email", 404)
 		return
 	}
 
