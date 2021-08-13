@@ -9,6 +9,7 @@ import (
 type User struct {
 	Id primitive.ObjectID `bson:"_id, omitempty" json:"id"`
 	//Names     string             `gorm:"type:varchar(20);not null;"`
+	UserName  string    `bson:"userName" json:"userName,omitempty"`
 	Name      string    `bson:"name" json:"name,omitempty"`
 	LastName  string    `bson:"lastName" json:"lastName,omitempty"`
 	BirthDay  time.Time `bson:"birthday" json:"birthday,omitempty"`
