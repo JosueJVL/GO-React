@@ -17,7 +17,7 @@ func Manejadores() {
 	route.HandleFunc("/registro", middlew.CheckDB(routers.Register)).Methods("POST")
 	route.HandleFunc("/login", middlew.CheckDB(routers.Login)).Methods("POST")
 	route.HandleFunc("/perfil", middlew.CheckDB(middlew.ValidateJWT(routers.GetPerfil))).Methods("GET")
-
+	route.HandleFunc("/updateUsers", middlew.CheckDB(middlew.ValidateJWT(routers.UpdateUser))).Methods("PUT")
 	// Abrir el Puerto
 	PORT := os.Getenv("PORT")
 
