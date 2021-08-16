@@ -20,7 +20,13 @@ func Manejadores() {
 	route.HandleFunc("/updateUsers", middlew.CheckDB(middlew.ValidateJWT(routers.UpdateUser))).Methods("PUT")
 	route.HandleFunc("/addTweets", middlew.CheckDB(middlew.ValidateJWT(routers.AddTweet))).Methods("POST")
 	route.HandleFunc("/getTweets", middlew.CheckDB(middlew.ValidateJWT(routers.GetTweets))).Methods("GET")
-	route.HandleFunc("/deleteTweets", middlew.CheckDB(middlew.ValidateJWT(routers.DeleteTweet))).Methods("DELETE")
+	route.HandleFunc("/deleteTweet", middlew.CheckDB(middlew.ValidateJWT(routers.DeleteTweet))).Methods("DELETE")
+
+	route.HandleFunc("/uploadAvatar", middlew.CheckDB(middlew.ValidateJWT(routers.AddAvatar))).Methods("POST")
+	route.HandleFunc("/uploadBanner", middlew.CheckDB(middlew.ValidateJWT(routers.AddBanner))).Methods("POST")
+
+	route.HandleFunc("/getAvatar", middlew.CheckDB(middlew.ValidateJWT(routers.GetAvatar))).Methods("GET")
+	route.HandleFunc("/getBanner", middlew.CheckDB(middlew.ValidateJWT(routers.GetBanner))).Methods("GET")
 
 	// Abrir el Puerto
 	PORT := os.Getenv("PORT")
