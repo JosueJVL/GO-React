@@ -11,7 +11,7 @@ import (
 func GetRelation(w http.ResponseWriter, r *http.Request) {
 	UserRelationId := r.URL.Query().Get("id")
 
-	if len(UserId) < 1 {
+	if len(UserRelationId) < 1 {
 		http.Error(w, "El parametro id es obligatorio", http.StatusBadRequest)
 		return
 	}
